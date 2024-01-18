@@ -1,0 +1,39 @@
+Topics:
+1: Interface
+	a)Interface
+	b)Functional Interface
+
+
+
+
+
+
+
+a)Interface
+	1: We cannot have method with same name (either abstract,static or default method)
+	2: We can have any no of default and static method, also we can have object class method
+	3: while overriding default method in a class (removing default keyword) we can have greater scope than 
+	   default but like public , but cannot have less scope(private,protected,default)
+	4: from 3: If we go with public then we can override the default method from interface
+	   and overriden method will be called
+	5: We can write static method with same name in implemented class(with any access specifier like 
+		public, private, protected) except default
+		Note : a)If we hold interface class obj in interface reference then you cannot call the static method
+		 	e.g. SampleInterface iref = new ImplemnetedClass();
+		 	b)If we hold ImplemnetedClass class obj in ImplemnetedClass class reference then you can call the static method
+		 	e.g. ImplemnetedClass cref = new ImplemnetedClass();
+	6: In a ImplemnetedClass we can remove static keyword of static method from interface
+		still we cannot call it using  interface ref (refer 5.a note)
+	7: To call static method
+		InterfaceName.staticMethodName - to call static method of interface
+		ClassName.staticMethodName - to call static method of class
+		
+	
+b)Functional Interface:
+------------------------
+1- Functional Interface cannot extends other functional interface
+2- Functional Interface other interface (that interface can have default and static method but 
+   no abstract method
+3- If we extends two interface A and B both having default method with same name(defMethod()) and signature
+and class Test implements both interface then =>CT Error -Duplicate default methods named defMethod with
+the parameters () and () are inherited from the types B and A
